@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ReasourceList from './ResourceList'
+import ResourceList from './ResourceList';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div></div>
+const App = () => {
+  const [resource, setResource] = useState('posts')
+  
+  return (
+    <div className="App">
+      <div>
+        <button onClick={() => setResource('posts')}>Posts</button>
+        <button onClick={() => setResource('todos')}>Todos</button>
       </div>
-    );
-  }
-
+      <ResourceList resource={resource}></ResourceList>
+    </div>
+  );
 }
 
 export default App;
